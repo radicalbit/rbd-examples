@@ -7,7 +7,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import java.util.Arrays;
 import java.util.List;
 
-public class QuickstartFirstProgram {
+public class QuickstartFirstJob {
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env =
