@@ -1,1 +1,1 @@
-.writeAsText("alluxio:///path/to/my/file")
+data.writeAsText("alluxio:///path/to/my/file")
