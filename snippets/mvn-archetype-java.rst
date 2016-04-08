@@ -1,4 +1,4 @@
- mvn archetype:generate                       \
+ mvn archetype:generate                        \
   -DarchetypeGroupId=io.radicalbit.flink       \
   -DarchetypeArtifactId=flink-quickstart-java  \
   -DarchetypeVersion=1.0-SNAPSHOT              \

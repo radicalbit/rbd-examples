@@ -1,6 +1,6 @@
 <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-rbp-1.0-connector-cassandra_2.11</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-rbp-1.0-connector-cassandra_2.11</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
 
