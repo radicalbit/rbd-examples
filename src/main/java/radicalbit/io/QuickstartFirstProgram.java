@@ -10,9 +10,11 @@ import java.util.List;
 public class QuickstartFirstProgram {
 
     public static void main(String[] args) throws Exception {
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        StreamExecutionEnvironment env =
+                StreamExecutionEnvironment.getExecutionEnvironment();
 
-        List<String> words = Arrays.asList("welcome", "to", "the", "fast-data", "revolution.");
+        List<String> words =
+                Arrays.asList("welcome", "to", "the", "fast-data", "revolution.");
 
         DataStream<String> source = env.fromCollection(words);
 
