@@ -1,0 +1,1 @@
+.writeAsText("alluxio:///path/to/my/file")
