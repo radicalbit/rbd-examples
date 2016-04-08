@@ -1,4 +1,4 @@
-package radicalbit.io;
+package radicalbit.io.java;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -12,6 +12,7 @@ public class QuickstartFirstJob {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env =
                 StreamExecutionEnvironment.getExecutionEnvironment();
+        env.setParallelism(1);
 
         List<String> words =
                 Arrays.asList("welcome", "to", "the", "fast-data", "revolution.");

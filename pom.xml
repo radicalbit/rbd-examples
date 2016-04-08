@@ -96,6 +96,16 @@ under the License.
 			<artifactId>flink-rbp-1.0-clients_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-rbp-1.0-scala_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-rbp-1.0-streaming-scala_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -124,6 +134,20 @@ under the License.
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
+				<dependency>
+					<groupId>org.apache.flink</groupId>
+					<artifactId>flink-rbp-1.0-scala_2.11</artifactId>
+					<version>${flink.version}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.flink</groupId>
+					<artifactId>flink-rbp-1.0-streaming-scala_2.11</artifactId>
+					<version>${flink.version}</version>
+					<scope>provided</scope>
+				</dependency>
+
+
 			</dependencies>
 
 			<build>
