@@ -19,6 +19,7 @@ object FlinkJPMMLQuickstart {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     env.setParallelism(1)
 
+    //First, we generate some random data
     val header: Seq[String] = List(
       "petal_width",
       "petal_length",
@@ -26,19 +27,22 @@ object FlinkJPMMLQuickstart {
       "sepal_width")
     val randomData = for (i <- 1 to 100) yield Seq.fill(4)(Random.nextDouble()*8)
     val dataWithHeader = randomData.map(row => (header zip row).toMap[String, Any])
-
     val input = env.fromCollection(dataWithHeader)
 
+    //Then we read a PMML from the local filesystem
     val source = Source.fromURL(getClass.getResource("/single_iris_kmeans.xml")).mkString
 
+    //Here we create the JPMMLEvaluationMapOperator
     val pmmlOperator = JPMMLEvaluationMapOperator(source,
       InputPreparationErrorHandlingStrategies.throwExceptionStrategy,
       MissingValueStrategies.delegateToPMML,
       ResultExtractionStrategies.defaultExtractResult
     )
 
+    //To the input DataStream, we connect the Evaluation Operator...
     val predictionResult = input.map(pmmlOperator)
 
+    //...and last we invoke print() to see the results on the console
     predictionResult.print()
 
     env.execute("Flink-JPMML prediction Job")
