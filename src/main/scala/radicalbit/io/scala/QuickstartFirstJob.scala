@@ -2,17 +2,24 @@ package radicalbit.io.scala
 
 import org.apache.flink.streaming.api.scala._
 
-object QuickstartFirstJob{
+object QuickstartFirstJob {
 
   def main(args: Array[String]) {
-    val env=StreamExecutionEnvironment.getExecutionEnvironment
+
+    //Here we create the Streaming Execution environment...
+    val env = StreamExecutionEnvironment.getExecutionEnvironment
+
+    //...and we set its parallelism to 1 to see the results printed in order
     env.setParallelism(1)
 
-    val words= List("welcome", "to", "the", "fast-data", "revolution.")
+    //We first create a DataStream from a bunch of strings...
+    val source = env.fromElements("welcome", "to", "the", "fast-data", "revolution.")
 
-    val source=env.fromCollection(words)
+    //...and we turn them to uppercase.
+    val processed = source.map(_.toUpperCase)
 
-    source.map(_.toUpperCase).print()
+    //At last we print the result to console.
+    processed.print()
 
     env.execute("My first Job")
   }
