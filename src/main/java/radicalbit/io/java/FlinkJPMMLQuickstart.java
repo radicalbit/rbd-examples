@@ -40,7 +40,8 @@ public class FlinkJPMMLQuickstart {
                                 .getResource("single_iris_kmeans.xml"))
                                 .getFile()));
 
-        //Here we create the JPMMLEvaluationMapOperator using the dedicated builder JPMMLEvaluationOperatorBuilder
+        //Here we create the JPMMLEvaluationMapOperator using the dedicated
+        //builder JPMMLEvaluationOperatorBuilder
         MapFunction<Map<String, Object>, Map<String, Object>> operator =
                 JPMMLEvaluationOperatorBuilder.create(pmmlSource)
                         .setExceptionHandlingStrategy(Strategies.LogExceptionStrategy())
