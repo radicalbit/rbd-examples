@@ -18,9 +18,10 @@ object QuickstartFirstJob {
     //...and we turn them to uppercase.
     val processed = source.map(_.toUpperCase)
 
-    //At last we print the result to console.
+    //At last we print the result to console. This also implicitly calls the .execute() method.
     processed.print()
 
+    //We call it explicitely anyway to give the Job an unique and recognizable name.
     env.execute("My first Job")
   }
 }
