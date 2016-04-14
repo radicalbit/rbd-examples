@@ -45,7 +45,9 @@ public class FlinkJPMMLQuickstart {
         MapFunction<Map<String, Object>, Map<String, Object>> operator =
                 JPMMLEvaluationOperatorBuilder.create(pmmlSource)
                         .setExceptionHandlingStrategy(Strategies.LogExceptionStrategy())
-                        .setResultExtractionStrategy(Strategies.ExtractTargetAndOutputFieldStrategy())
+                        .setResultExtractionStrategy(
+                                Strategies.ExtractTargetAndOutputFieldStrategy()
+                        )
                         .buildMapOperator();
 
         //To the input DataStream, we connect the Evaluation Operator...
