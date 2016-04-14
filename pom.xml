@@ -176,6 +176,19 @@ under the License.
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.scalariform</groupId>
+						<artifactId>scalariform-maven-plugin</artifactId>
+						<version>0.0.9</version>
+						<executions>
+							<execution>
+								<phase>process-sources</phase>
+								<goals>
+									<goal>format</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
