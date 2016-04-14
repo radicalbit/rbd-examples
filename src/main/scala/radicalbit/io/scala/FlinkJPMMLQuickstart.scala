@@ -1,7 +1,7 @@
 package radicalbit.io.scala
 
 import io.radicalbit.flink.pmml.scala.api.JPMMLEvaluationMapOperator
-import io.radicalbit.flink.pmml.scala.strategies.{ InputPreparationErrorHandlingStrategies, MissingValueStrategies, ResultExtractionStrategies }
+import io.radicalbit.flink.pmml.scala.strategies._
 import org.apache.flink.streaming.api.scala._
 import org.slf4j.LoggerFactory
 
