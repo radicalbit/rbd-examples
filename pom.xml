@@ -30,7 +30,7 @@ under the License.
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<flink.version>1.0-SNAPSHOT</flink.version>
+		<flink.version>1.0.1-rbp-001</flink.version>
 	</properties>
 
 	<repositories>
@@ -83,27 +83,27 @@ under the License.
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-rbp-1.0-java</artifactId>
+			<artifactId>flink-java</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-rbp-1.0-streaming-java_2.11</artifactId>
+			<artifactId>flink-streaming-java_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-rbp-1.0-clients_2.11</artifactId>
+			<artifactId>flink-clients_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-rbp-1.0-scala_2.11</artifactId>
+			<artifactId>flink-scala_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-rbp-1.0-streaming-scala_2.11</artifactId>
+			<artifactId>flink-streaming-scala_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
 		<dependency>
@@ -123,31 +123,31 @@ under the License.
 			<dependencies>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-rbp-1.0-java</artifactId>
+					<artifactId>flink-java</artifactId>
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-rbp-1.0-streaming-java_2.11</artifactId>
+					<artifactId>flink-streaming-java_2.11</artifactId>
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-rbp-1.0-clients_2.11</artifactId>
+					<artifactId>flink-clients_2.11</artifactId>
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-rbp-1.0-scala_2.11</artifactId>
+					<artifactId>flink-scala_2.11</artifactId>
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-rbp-1.0-streaming-scala_2.11</artifactId>
+					<artifactId>flink-streaming-scala_2.11</artifactId>
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
