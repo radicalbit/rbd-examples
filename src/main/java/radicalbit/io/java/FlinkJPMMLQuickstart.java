@@ -1,7 +1,8 @@
 package radicalbit.io.java;
 
 import io.radicalbit.flink.pmml.java.api.JPMMLEvaluationOperatorBuilder;
-import io.radicalbit.flink.pmml.java.strategies.Strategies;
+import io.radicalbit.flink.pmml.java.strategies.ExceptionHandlingStrategies;
+import io.radicalbit.flink.pmml.java.strategies.ResultExtractionStrategies;
 import org.apache.commons.io.IOUtils;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -44,9 +45,9 @@ public class FlinkJPMMLQuickstart {
         //builder JPMMLEvaluationOperatorBuilder
         MapFunction<Map<String, Object>, Map<String, Object>> operator =
                 JPMMLEvaluationOperatorBuilder.create(pmmlSource)
-                        .setExceptionHandlingStrategy(Strategies.logExceptionStrategy())
+                        .setExceptionHandlingStrategy(ExceptionHandlingStrategies.logExceptionStrategy())
                         .setResultExtractionStrategy(
-                                Strategies.extractTargetAndOutputFieldStrategy()
+                                ResultExtractionStrategies.extractTargetAndOutputFieldStrategy()
                         )
                         .buildMapOperator();
 

@@ -32,7 +32,7 @@ object FlinkJPMMLQuickstart {
 
     //Here we create the JPMMLEvaluationMapOperator
     val pmmlOperator = JPMMLEvaluationMapOperator(source,
-      InputPreparationErrorHandlingStrategies.throwExceptionStrategy,
+      InputPreparationErrorHandlingStrategies.propagateExceptionStrategy,
       MissingValueStrategies.delegateToPMML,
       ResultExtractionStrategies.extractTargetAndOutputField)
 
