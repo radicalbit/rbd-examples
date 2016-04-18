@@ -34,7 +34,7 @@ object FlinkJPMMLQuickstart {
     val pmmlOperator = JPMMLEvaluationMapOperator(source,
       InputPreparationErrorHandlingStrategies.throwExceptionStrategy,
       MissingValueStrategies.delegateToPMML,
-      ResultExtractionStrategies.defaultExtractResult)
+      ResultExtractionStrategies.extractTargetAndOutputField)
 
     //To the input DataStream, we connect the Evaluation Operator...
     val predictionResult = input.map(pmmlOperator)
