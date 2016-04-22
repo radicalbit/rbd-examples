@@ -1,0 +1,1 @@
+keytool -genkeypair -keyalg RSA -alias node1 -keystore node1.jks -storepass N0dePa$$word -keypass N0dePa$$word -validity 365 -keysize 2048 -dname "CN=node1, OU=SSLCluster, O=Radicalbit, C=IT"
