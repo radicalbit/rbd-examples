@@ -6,9 +6,6 @@ import com.typesafe.config.ConfigFactory
 import org.apache.flink.connectors.akka.streaming.AkkaSink
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 
-/**
-	* Created by alkagin on 26/04/16.
-	*/
 object AkkaSinkExample extends Conf {
 
 	val actorReceiverPath = "akka.tcp://actor-test@127.0.0.1:4000/user/receiver"
