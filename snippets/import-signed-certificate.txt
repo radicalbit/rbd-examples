@@ -1,0 +1,6 @@
+keytool -import 
+        -keystore node1.jks 
+        -alias node1  
+        -file node1.sc 
+        -keypass N0dePa$$word 
+        -storepass N0dePa$$word
