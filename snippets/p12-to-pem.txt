@@ -1,0 +1,4 @@
+openssl pkcs12 \
+        -in node1.p12 \
+        -out node1.pem \
+        -nodes
