@@ -1,8 +1,8 @@
-openssl x509 -req 
-             -CA ca.rootcertificate 
-             -CAkey ca.key 
-             -in node1.csr 
-             -out node1.sc 
-             -days 365 
-             -CAcreateserial 
+openssl x509 -req \
+             -CA ca.rootcertificate \
+             -CAkey ca.key \
+             -in node1.csr \
+             -out node1.sc \
+             -days 365 \
+             -CAcreateserial \
              -passin pass:CApassw0rd!
