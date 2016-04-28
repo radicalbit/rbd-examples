@@ -1,0 +1,7 @@
+keytool -import \
+        -keystore node1.jks \
+        -alias caroot  \
+        -file ca.rootcertificate \
+        -noprompt \
+        -keypass N0dePa$$word \
+        -storepass N0dePa$$word
