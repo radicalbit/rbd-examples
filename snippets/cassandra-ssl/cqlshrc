@@ -1,0 +1,14 @@
+[authentication]
+username =
+password =
+
+[connection]
+hostname = localhost
+port = 9042
+factory = cqlshlib.ssl.ssl_transport_factory
+
+[ssl]
+validate = true ## Optional, true by default.
+
+[certfiles]
+<node1 ip> = ~/.cassandra/node1.pem
