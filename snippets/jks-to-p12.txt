@@ -1,9 +1,0 @@
-keytool -importkeystore \
-        -srckeystore node1.jks  \
-        -destkeystore node1.p12 \
-        -deststoretype PKCS12 \
-        -alias node1 \
-        -srcstorepass N0dePa$$word \
-        -srckeypass N0dePa$$word \
-        -deststorepass CqlPa$$word \
-        -destkeypass CqlPa$$word

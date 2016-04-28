@@ -1,2 +1,0 @@
--Djavax.net.ssl.trustStore=<path of client trustStore>/client.jks
--Djavax.net.ssl.trustStorePassword=Cl1entPa$$word

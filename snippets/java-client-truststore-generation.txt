@@ -1,6 +1,0 @@
-keytool -keystore client.jks \
-        -alias caroot \
-        -importcert -file ca.rootcertificate \  
-        -keypass Cl1entPa$$word \
-        -storepass Cl1entPa$$word \
-        -noprompt

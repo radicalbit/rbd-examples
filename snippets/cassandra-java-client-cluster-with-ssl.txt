@@ -1,4 +1,0 @@
-Cluster cluster = Cluster.builder()
-     .addContactPoint(host)
-     .withSSL()
-     .build();

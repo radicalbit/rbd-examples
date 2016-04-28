@@ -1,5 +1,0 @@
-client_encryption_options:
-enabled: true
-keystore: <cassandra_path>/conf/keystore.jks
-keystore_password: N0dePa$$word
-optional: false

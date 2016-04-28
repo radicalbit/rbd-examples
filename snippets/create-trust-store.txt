@@ -1,7 +1,0 @@
-keytool -importcert \
-        -keystore truststore.jks \
-        -alias caroot \
-        -file ca.rootcertificate \
-        -keypass Tru$tPa$$w0rd \
-        -storepass Tru$tPa$$w0rd \
-        -noprompt
