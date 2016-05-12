@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 public class CassandraConnectorExample {
 
-	final static Collection<String> collection= new ArrayList<>(50);
+	private final static Collection<String> collection = new ArrayList<>(50);
 	static {
 		for (int i = 1; i <=  50; ++i) {
 			collection.add("element " + i);
