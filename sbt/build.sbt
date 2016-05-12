@@ -4,7 +4,7 @@ name := "My Flink Project"
 
 version := "0.1-SNAPSHOT"
 
-organization := "org.example"
+organization := "io.radicalbit"
 
 scalaVersion in ThisBuild := "2.11.7"
 
@@ -19,7 +19,7 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= flinkDependencies
   )
 
-mainClass in assembly := Some("org.example.Job")
+mainClass in assembly := Some("io.radicalbit.Job")
 
 // make run command include the provided dependencies
 run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))

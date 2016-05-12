@@ -1,3 +1,5 @@
+package io.radicalbit
+
 import org.apache.flink.api.scala._
 
 object Job {
