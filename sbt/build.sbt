@@ -19,7 +19,7 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= flinkDependencies
   )
 
-mainClass in assembly := Some("io.radicalbit.Job")
+mainClass in assembly := Some("io.radicalbit.flink.batch.BatchJob")
 
 // make run command include the provided dependencies
 run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
