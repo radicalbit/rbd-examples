@@ -19,13 +19,13 @@ under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<groupId>io.radicalbit</groupId>
-	<artifactId>rbp-docs-code</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<artifactId>cassandra-connector-example</artifactId>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>Radicalbit Fast Data Distribution Documentation code samples</name>
+	<name>Cassandra Connector Example</name>
 	<url>http://www.radicalbit.io</url>
 
 	<properties>
@@ -44,20 +44,10 @@ under the License.
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>radicalbit-snapshots</id>
-			<url>https://public-repo.radicalbit.io/maven/repository/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
-
-	<!--
-
+	
+	<!-- 
+		
 		Execute "mvn clean package -Pbuild-jar"
 		to build a jar file out of this project!
 
@@ -98,24 +88,9 @@ under the License.
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-scala_2.11</artifactId>
+			<artifactId>flink-connector-cassandra_2.11</artifactId>
 			<version>${flink.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-streaming-scala_2.11</artifactId>
-			<version>${flink.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.radicalbit</groupId>
-			<artifactId>flink-jpmml</artifactId>
-			<version>0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-connector-kafka-0.9_2.11</artifactId>
-			<version>${flink.version}</version>
-		</dependency>
+        	</dependency>
 	</dependencies>
 
 	<profiles>
@@ -144,20 +119,6 @@ under the License.
 					<version>${flink.version}</version>
 					<scope>provided</scope>
 				</dependency>
-				<dependency>
-					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-scala_2.11</artifactId>
-					<version>${flink.version}</version>
-					<scope>provided</scope>
-				</dependency>
-				<dependency>
-					<groupId>org.apache.flink</groupId>
-					<artifactId>flink-streaming-scala_2.11</artifactId>
-					<version>${flink.version}</version>
-					<scope>provided</scope>
-				</dependency>
-
-
 			</dependencies>
 
 			<build>
@@ -178,19 +139,6 @@ under the License.
 										<excludes combine.self="override"></excludes>
 									</artifactSet>
 								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.scalariform</groupId>
-						<artifactId>scalariform-maven-plugin</artifactId>
-						<version>0.0.9</version>
-						<executions>
-							<execution>
-								<phase>process-sources</phase>
-								<goals>
-									<goal>format</goal>
-								</goals>
 							</execution>
 						</executions>
 					</plugin>
@@ -218,23 +166,23 @@ under the License.
 						<configuration>
 							<artifactSet>
 								<excludes>
-									<!-- This list contains all dependencies of flink-rbp-1.0-dist
+									<!-- This list contains all dependencies of flink-dist
 									Everything else will be packaged into the fat-jar
 									-->
-									<exclude>org.apache.flink:flink-rbp-1.0-annotations</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-shaded-hadoop1</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-shaded-hadoop2</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-shaded-curator-recipes</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-core</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-java</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-scala_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-runtime_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-optimizer_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-clients_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-avro_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-examples-batch_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-examples-streaming_2.11</exclude>
-									<exclude>org.apache.flink:flink-rbp-1.0-streaming-java_2.11</exclude>
+									<exclude>org.apache.flink:flink-annotations</exclude>
+									<exclude>org.apache.flink:flink-shaded-hadoop1</exclude>
+									<exclude>org.apache.flink:flink-shaded-hadoop2</exclude>
+									<exclude>org.apache.flink:flink-shaded-curator-recipes</exclude>
+									<exclude>org.apache.flink:flink-core</exclude>
+									<exclude>org.apache.flink:flink-java</exclude>
+									<exclude>org.apache.flink:flink-scala_2.10</exclude>
+									<exclude>org.apache.flink:flink-runtime_2.10</exclude>
+									<exclude>org.apache.flink:flink-optimizer_2.10</exclude>
+									<exclude>org.apache.flink:flink-clients_2.10</exclude>
+									<exclude>org.apache.flink:flink-avro_2.10</exclude>
+									<exclude>org.apache.flink:flink-examples-batch_2.10</exclude>
+									<exclude>org.apache.flink:flink-examples-streaming_2.10</exclude>
+									<exclude>org.apache.flink:flink-streaming-java_2.10</exclude>
 
 									<!-- Also exclude very big transitive dependencies of Flink
 
@@ -315,7 +263,7 @@ under the License.
 							<transformers>
 								<!-- add Main-Class to manifest file -->
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>radicalbit.io.Job</mainClass>
+									<mainClass>io.radicalbit.CassandraConnectorExample</mainClass>
 								</transformer>
 							</transformers>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
@@ -334,8 +282,8 @@ under the License.
 				</configuration>
 			</plugin>
 		</plugins>
-
-
+		
+			
 		<!-- If you want to use Java 8 Lambda Expressions uncomment the following lines -->
 		<!--
 		<pluginManagement>
@@ -355,7 +303,7 @@ under the License.
 						</dependency>
 					</dependencies>
 				</plugin>
-
+		
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -397,6 +345,6 @@ under the License.
 			</plugins>
 		</pluginManagement>
 		-->
-
+		
 	</build>
 </project>
