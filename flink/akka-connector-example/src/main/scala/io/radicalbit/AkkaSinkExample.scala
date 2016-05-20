@@ -29,17 +29,17 @@ object ConfigurationUtil {
 
   def conf(port: Int) = ConfigFactory.parseString {
     s"""
-       			 |akka {
-       			 |  actor {
-       			 |    provider = "akka.remote.RemoteActorRefProvider"
-       			 |  }
-       			 |  remote {
-       			 |    netty.tcp {
-       			 |      hostname = "127.0.0.1"
-       			 |      port = $port
-       			 |    }
-       			 | }
-       			 |}
-       			 |""".stripMargin
+        |akka {
+        |  actor {
+        |    provider = "akka.remote.RemoteActorRefProvider"
+        |  }
+        |  remote {
+        |    netty.tcp {
+        |      hostname = "127.0.0.1"
+        |      port = $port
+        |    }
+        | }
+        |}
+        |""".stripMargin
   }
 }
