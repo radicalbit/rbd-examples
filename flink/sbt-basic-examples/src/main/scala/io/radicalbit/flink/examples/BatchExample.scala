@@ -1,8 +1,8 @@
-package io.radicalbit.flink.batch
+package io.radicalbit.flink.examples
 
 import org.apache.flink.api.scala._
 
-object BatchJob {
+object BatchExample {
 
   def main(args: Array[String]): Unit = {
 
