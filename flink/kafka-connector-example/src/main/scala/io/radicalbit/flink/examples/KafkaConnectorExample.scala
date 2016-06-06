@@ -1,4 +1,4 @@
-package io.radicalbit.test
+package io.radicalbit.flink.examples
 
 import java.util.Properties
 
@@ -11,9 +11,9 @@ import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer09, FlinkK
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema
 import org.slf4j.LoggerFactory
 
-object FlinkKafka {
+object KafkaConnectorExample {
 
-  private def logger = LoggerFactory.getLogger(FlinkKafka.getClass)
+  private def logger = LoggerFactory.getLogger(KafkaConnectorExample.getClass)
 
   // This object will serialize and deserialize data to and from Kafka
   private val serdeSchema = new SimpleStringSchema
@@ -23,10 +23,11 @@ object FlinkKafka {
   // --broker-list:  a comma-separated list of <host:port> pairs pointing to Kafka brokers
   // --source-topic: the Kafkatopic we'll read from
   // --sink-topic:   the Kafka topic we'll write to
+  // --secure:       true if running on a secure cluster (Kerberos), otherwise false
   // Both topics must exist before the launch.
   // Furthermore, the optional --secure option will enable communication with a
   // secure Kafka installation if set to true
-  private val requiredParameters = Set("broker-list", "sink-topic", "source-topic")
+  private val requiredParameters = Set("broker-list", "sink-topic", "source-topic", "secure")
 
   def main(args: Array[String]) {
 

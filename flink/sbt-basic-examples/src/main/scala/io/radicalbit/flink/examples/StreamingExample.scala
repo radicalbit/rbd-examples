@@ -1,8 +1,8 @@
-package io.radicalbit.flink.streaming
+package io.radicalbit.flink.examples
 
 import org.apache.flink.streaming.api.scala._
 
-object StreamingJob {
+object StreamingExample {
 
   def main(args: Array[String]): Unit = {
 
