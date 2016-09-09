@@ -8,7 +8,7 @@ scalaVersion in ThisBuild := "2.11.7"
 
 resolvers in ThisBuild ++= Seq(Resolver.mavenLocal, "Radicalbit Public Maven Repository" at "https://public-repo.radicalbit.io/maven/repository/internal/")
 
-val flinkVersion = "1.0.1-rbp-002"
+val flinkVersion = "rbd-1.0-flink-1.1.1"
 
 val flinkDependencies = Seq(
   "org.apache.flink" %% "flink-scala" % flinkVersion % "provided",

@@ -30,7 +30,7 @@ under the License.
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<flink.version>1.0.1-rbp-001</flink.version>
+		<flink.version>rbd-1.0-flink-1.1.1</flink.version>
 	</properties>
 
 	<repositories>
