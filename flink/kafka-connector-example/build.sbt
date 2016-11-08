@@ -8,12 +8,12 @@ organization := "io.radicalbit"
 
 scalaVersion in ThisBuild := "2.11.7"
 
-val flinkVersion = "rbd-1.0-flink-1.1.1"
+val flinkVersion = "1.1.2-rbd-002"
 
 val flinkDependencies = Seq(
   "org.apache.flink" %% "flink-scala" % flinkVersion % "provided",
   "org.apache.flink" %% "flink-streaming-scala" % flinkVersion % "provided",
-  "org.apache.flink" %% "flink-connector-kafka-0.9" % flinkVersion)
+  "org.apache.flink" %% "flink-connector-kafka-0.10" % flinkVersion)
 
 lazy val root = (project in file(".")).
   settings(
