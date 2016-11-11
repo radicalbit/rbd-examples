@@ -30,7 +30,7 @@ under the License.
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<alluxio.version>1.2.1</alluxio.version>
+		<alluxio.version>1.2.0</alluxio.version>
 	</properties>
 
 	<repositories>

@@ -7,7 +7,7 @@ import scala.collection.JavaConversions.mapAsScalaMap
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
-import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer09, FlinkKafkaProducer09}
+import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer10, FlinkKafkaProducer10}
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema
 import org.slf4j.LoggerFactory
 
@@ -46,8 +46,8 @@ object KafkaConnectorExample {
     val (consumerProps, producerProps) = getConsumerAndProducerProps(params)
 
     // Define the Kafka consumer and producer for Flink using the given parameters
-    val kafkaConsumer = new FlinkKafkaConsumer09[String](params.get("source-topic"), serdeSchema, consumerProps)
-    val kafkaProducer = new FlinkKafkaProducer09[String](params.get("sink-topic"), serdeSchema, producerProps)
+    val kafkaConsumer = new FlinkKafkaConsumer10[String](params.get("source-topic"), serdeSchema, consumerProps)
+    val kafkaProducer = new FlinkKafkaProducer10[String](params.get("sink-topic"), serdeSchema, producerProps)
 
     // Our simple job: append a [processed] tag to each incoming string and write it to the sink
     env.addSource(kafkaConsumer).map(in => s"$in [processed]").addSink(kafkaProducer)
